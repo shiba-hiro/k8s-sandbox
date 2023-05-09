@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-example
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  source:
+    repoURL: http://host.minikube.internal:3780/gitlab-instance-50bd1543/app-manifest
+    targetRevision: main
+    path: "app-example"
+    # credentials:
+    #   name: github-token-secret
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

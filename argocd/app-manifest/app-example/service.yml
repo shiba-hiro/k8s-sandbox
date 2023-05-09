@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-example
+spec:
+  ports:
+  - port: 3780
+    targetPort: 3780
+  selector:
+    app: app-example
