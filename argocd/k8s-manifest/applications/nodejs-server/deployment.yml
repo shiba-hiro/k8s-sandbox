@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-example
+  name: nodejs-server
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: app-example
+      app: nodejs-server
   template:
     metadata:
       labels:
-        app: app-example
+        app: nodejs-server
     spec:
       containers:
-      - image: docker.io/library/app-example:first
-        name: app-example
+      - image: docker.io/library/nodejs-server:first
+        name: nodejs-server
         ports:
         - containerPort: 3770

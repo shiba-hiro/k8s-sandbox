@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: app-main
+spec:
+  destinations:
+    - namespace: app-main
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - http://host.minikube.internal:3780/root/k8s-manifest.git

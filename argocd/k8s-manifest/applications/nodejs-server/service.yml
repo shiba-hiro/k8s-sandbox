@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-example
+  name: nodejs-server
 spec:
   ports:
   - port: 3780
     targetPort: 3780
   selector:
-    app: app-example
+    app: nodejs-server

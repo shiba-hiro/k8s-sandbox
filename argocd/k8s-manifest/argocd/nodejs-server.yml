@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-example
+  name: nodejs-server
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: app-main
   source:
-    repoURL: http://host.minikube.internal:3780/gitlab-instance-50bd1543/app-manifest
+    repoURL: http://host.minikube.internal:3780/root/k8s-manifest.git
     targetRevision: main
-    path: "app-example"
+    path: "applications/nodejs-server"
     # credentials:
     #   name: github-token-secret
   project: default
